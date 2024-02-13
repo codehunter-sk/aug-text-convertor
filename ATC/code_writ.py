@@ -68,13 +68,15 @@ def saveit(folder_path,v,detect):
         loc=str(folder_path)+'/'
         c='picsave'+current_time+'.jpg'
         b=cv2.imwrite(loc+c,plainimg)
-        text=code_vrecog.recog(loc+c)
-        if text:
-            with open((loc+c)[:-4]+'_text.txt','w') as f:
-                f.write(text)
-            msgbox.showinfo(title = 'Alert!' , message = 'Plain text image and text saved in\nspecified folder location!')
-        else:
-            msgbox.showinfo(title = 'Alert!' , message = 'Text not detected properly, try again\n(Note:Image is saved for reference)')
+        msgbox.showinfo(title = 'Alert!' , message = 'Plain text image saved in specified folder location!')
+        if detect:
+            text=code_vrecog.recog(loc+c)
+            if text:
+                with open((loc+c)[:-4]+'_text.txt','w') as f:
+                    f.write(text)
+                msgbox.showinfo(title = 'Alert!' , message = 'Plain text image and text saved in\nspecified folder location!')
+            else:
+                msgbox.showinfo(title = 'Alert!' , message = 'Text not detected properly, try again\n(Note:Image is saved for reference)')
     else:
         msgbox.showinfo(title = 'Alert!' , message = 'Cannot save in this open mode!')
 
