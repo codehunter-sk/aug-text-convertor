@@ -13,7 +13,7 @@ Tesseract-OCR engine must be downloaded and stored appropriately or the path mus
 - Press "d" to detect with Keras-OCR
 - Press "l" to detect with Tesseract-OCR
 - Press "q" to quit the window
-- Make sure to use green pen, or change the colour range as required
+- Make sure to use green object for the code to detect, or change the colour range as required
 
 App Screens and Outputs:
 
