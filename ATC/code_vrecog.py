@@ -8,6 +8,8 @@ def recog(img_path=0):
     pytesseract.tesseract_cmd = path_to_tesseract
     text = pytesseract.image_to_string(img)
     text=text.lower()
+    print("Text:")
+    print(text)
     return text
 if __name__ == '__main__':
     recog()
